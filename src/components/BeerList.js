@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-
+import 'bootstrap/dist/css/bootstrap.css'
 
 
 
@@ -22,17 +22,20 @@ class BeerList extends Component {
   }
 
   render() {
-    return (
-      <ul>
-          {this.state.data.map(beer => (
-            <li key={beer.id} beer={this.beer}><h2>{beer.name}</h2>
-            <img style={{ height: 200 }} src={beer.image_url} alt="pics" />
-            <section>{beer.description}</section>
-            </li>
-          ))}
-          ;
-        </ul>
+    return ( 
+
       
+<ul className="list-unstyled">
+{this.state.data.map(beer => (
+  <li key={beer.id} beer={this.beer} className="media">
+    <img src={beer.image_url} className="mr-3" alt="..."/>
+    <div className="media-body">
+      <h5 className="mt-0 mb-1">{beer.name}</h5>
+      {beer.description}
+      </div>
+  </li>
+      ))};
+            </ul>
     )
   }
 }
