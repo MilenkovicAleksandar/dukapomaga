@@ -1,0 +1,19 @@
+render() {
+    return ( 
+
+      
+<ul>
+{this.state.data.map(beer => (
+  <li key={beer.id} beer={this.beer}>
+  <h3>{beer.name}</h3>
+    <img style={{height:200}} src={beer.image_url}  alt="..."/>
+    <p>
+      
+      {beer.description}
+      </p>
+  </li>
+      ))};
+            </ul>
+    )
+  }
+}
